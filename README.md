@@ -1,4 +1,4 @@
-📢 SMS Spam Detector - AI-Powered Spam Filtering
+📢 SMS Spam Detector - AI-Powered Message Filtering
 A React & Flask-powered tool designed to identify and filter spam messages using AI-driven analysis.
 
 🚀 Features
