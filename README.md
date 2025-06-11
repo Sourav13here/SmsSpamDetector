@@ -1,4 +1,4 @@
-# 📢 SMS Spam Detector – Message Filtering System
+# 📢 SMS Spam Detector 
 > A web-based spam detection system built with **React**, **Flask**, and **scikit-learn**, capable of classifying SMS messages as spam or not spam in real-time.
 
 ## 🧠 Project Overview
