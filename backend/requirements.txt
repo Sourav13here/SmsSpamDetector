@@ -1,15 +1,11 @@
 # Core Web Framework
-Flask==3.0.3
-flask-cors==6.0.0
+Flask>=3.0.0,<4.0.0
+flask-cors>=6.0.0,<7.0.0
 
 # Production Server
-gunicorn==23.0.0
+gunicorn>=23.0.0,<24.0.0
 
-# Machine Learning (only what you actually use)
-scikit-learn==1.7.0
-numpy==1.24.3
-pandas==2.0.2
-
-# Only if your model specifically needs these
-# nltk==3.9.1
-# joblib==1.5.1
+# Machine Learning - Allow patch updates
+scikit-learn>=1.5.0,<1.7.0
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<3.0.0
