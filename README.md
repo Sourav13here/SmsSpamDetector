@@ -59,11 +59,12 @@ SmsSpamDetector/
 
 
 ##👨‍💻 Developers
-###-Faruk Khan
-###-Mridul Roy
-###-Mriganka Jyoti Deka
-###-Sanjeev Iqbal Ahmed
-###-Sourav Sharma
+
+-**Faruk Khan**
+-**Mridul Roy**
+-**Mriganka Jyoti Deka**
+-**Sanjeev Iqbal Ahmed**
+-**Sourav Sharma**
 
 
 
