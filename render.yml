@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: spam-detector-app
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PORT
+        value: 5000
+    plan: free
+    region: singapore
+    buildFilter:
+      paths:
+        - backend/**
+    rootDir: backend
