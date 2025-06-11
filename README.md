@@ -53,18 +53,17 @@ SmsSpamDetector/
 - 🧪 **Testing Accuracy**: **98%**
 
 
-## Screenshots
+##📱Screenshots
 
 
 
 
-## Developers
--Faruk Khan
--Mridul Roy
--Mriganka Jyoti Deka
--Sanjeev Iqbal Ahmed
--Sourav Sharma
+##👨‍💻 Developers
+###-Faruk Khan
+###-Mridul Roy
+###-Mriganka Jyoti Deka
+###-Sanjeev Iqbal Ahmed
+###-Sourav Sharma
 
-## Contact
-Email:souravsharma13here@gmail.com
+
 
