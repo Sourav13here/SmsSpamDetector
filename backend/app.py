@@ -7,13 +7,13 @@ import pickle
 # Setup Flask App
 # ----------------------------
 
-# Set the correct path to the React build folder
+# Path to React build folder (will be copied during build)
 build_folder = os.path.join(os.path.dirname(__file__), 'build')
 app = Flask(__name__, static_folder=build_folder, static_url_path='')
 CORS(app)
 
 # ----------------------------
-# Load Trained Model (Only Once)
+# Load Trained Model
 # ----------------------------
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "spam_model.pkl")
@@ -22,7 +22,7 @@ if os.path.exists(MODEL_PATH):
     with open(MODEL_PATH, "rb") as f:
         vectorizer, model = pickle.load(f)
 else:
-    raise FileNotFoundError("Trained model 'spam_model.pkl' not found. Please train and save the model before running the app.")
+    raise FileNotFoundError("Trained model 'spam_model.pkl' not found.")
 
 # ----------------------------
 # API Endpoints
@@ -46,7 +46,7 @@ def predict():
     return jsonify({"prediction": bool(prediction)})
 
 # ----------------------------
-# Frontend Routes (React Build)
+# Frontend Routes
 # ----------------------------
 
 @app.route("/")
@@ -58,7 +58,7 @@ def serve_static(path):
     if os.path.exists(os.path.join(app.static_folder, path)):
         return send_from_directory(app.static_folder, path)
     else:
-        # For React Router - serve index.html for unknown routes
+        # Fallback to index.html for React Router
         return send_from_directory(app.static_folder, "index.html")
 
 # ----------------------------
@@ -66,5 +66,5 @@ def serve_static(path):
 # ----------------------------
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 10000))  # Render uses port 10000 by default
     app.run(host="0.0.0.0", port=port, debug=False)
