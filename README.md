@@ -62,12 +62,6 @@ We used Python’s machine learning ecosystem to train, evaluate, and deploy a l
 
 ---
 
-## 📱 Screenshots
-
-> *(Add relevant screenshots in this section – homepage, prediction result, etc.)*
-
-
----
 
 ## 🛡 Future Enhancements
 
