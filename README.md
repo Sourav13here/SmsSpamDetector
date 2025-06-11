@@ -20,27 +20,7 @@
 | Gunicorn 🚀     | Production Server  | Latest     |
 |  CSS 🎨         | UI Styling         | 3.3.0+     |
 
-## 📂 Project Structure
 
-SmsSpamDetector/
-├── frontend/ # React-based UI
-│ ├── src/ # Source files
-│ │ ├── components/ # UI components (Header, Footer, MessageInput, etc.)
-│ │ ├── styles/ # CSS styles (Tailwind)
-│ │ ├── utils/ # Helper functions (spam detection API calls)
-│ │ ├── App.js # Main UI logic
-│ │ ├── index.js # React entry point
-│ └── package.json # Dependencies and scripts
-├── backend/ # Flask-based API
-│ ├── app.py # Flask app entry point
-│ ├── model.py # Spam detection logic
-│ ├── requirements.txt # Python dependencies
-│ ├── Dockerfile # Deployment configuration
-│ ├── static/ # Frontend assets
-│ └── templates/ # HTML templates (if needed)
-├── render.yml # Render deployment config
-├── README.md # Project documentation
-└── .gitignore # Files to exclude from Git tracking
 
 
 ## 🌍 Live Deployment : https://sms-spam-detector-b15e.onrender.com
