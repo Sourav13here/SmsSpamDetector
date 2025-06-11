@@ -1,15 +1,16 @@
 services:
   - type: web
-    name: spam-detector-app
+    name: sms-spam-backend
     env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn app:app
-    envVars:
-      - key: PORT
-        value: 5000
-    plan: free
-    region: singapore
-    buildFilter:
-      paths:
-        - backend/**
-    rootDir: backend
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "python backend/app.py"
+    workingDir: backend
+    autoDeploy: true
+
+  - type: web
+    name: sms-spam-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: frontend/build
+    workingDir: frontend
+    autoDeploy: true
