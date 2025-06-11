@@ -49,7 +49,7 @@ with open("spam_model.pkl", "wb") as f:
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    message = data["message"]
+    message = data["text"]
 
     # Load trained model
     with open("spam_model.pkl", "rb") as f:
@@ -58,10 +58,10 @@ def predict():
     message_vectorized = vectorizer.transform([message])
     prediction = model.predict(message_vectorized)[0]
 
-    return jsonify({"spam": bool(prediction)})
+    return jsonify({"prediction": bool(prediction)})
 
 # Run the Flask app
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=False)
 
 
