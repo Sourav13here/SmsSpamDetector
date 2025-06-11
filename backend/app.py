@@ -7,7 +7,9 @@ import pickle
 # Setup Flask App
 # ----------------------------
 
-app = Flask(__name__, static_folder='build', static_url_path='')
+# Set the correct path to the React build folder
+build_folder = os.path.join(os.path.dirname(__file__), 'build')
+app = Flask(__name__, static_folder=build_folder, static_url_path='')
 CORS(app)
 
 # ----------------------------
@@ -53,11 +55,16 @@ def serve_index():
 
 @app.route("/<path:path>")
 def serve_static(path):
-    return send_from_directory(app.static_folder, path)
+    if os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        # For React Router - serve index.html for unknown routes
+        return send_from_directory(app.static_folder, "index.html")
 
 # ----------------------------
 # Run Flask App
 # ----------------------------
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
